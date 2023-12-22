@@ -4,10 +4,11 @@ function getSuperSeriesWinner($array)
     $canada = 0;
     $ussr = 0;
     $winner = 'ussr';
-    for($i = 0; $i < count($array); $i++)
-    {
-        if($array[$i][0] > $array[$i][1]) $canada++;
-        else if ($array[$i][0] < $array[$i][1]) $ussr++;
+
+    foreach ($array as $row) {
+
+        if($row[0] > $row[1]) $canada++;
+        else if ($row[0] < $row[1]) $ussr++;
     }
     if($canada > $ussr) $winner = 'canada';
     return $winner;
